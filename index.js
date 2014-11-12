@@ -6,7 +6,7 @@ var PluginError = gutil.PluginError;
 
 var gss_compiler = require('gss-compiler');
 
-const PLUGIN_NAME = 'gulp-gss';
+var PLUGIN_NAME = 'gulp-gss';
 
 
 // aux var to hold the gss compiler output
@@ -22,7 +22,7 @@ function gulpGss() {
         }
 
         if (file.isBuffer()){
-            ast = gss_compiler.compile(file.contents);
+            ast = gss_compiler.compile(file.contents.toString());
         }
 
 

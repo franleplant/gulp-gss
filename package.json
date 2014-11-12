@@ -16,5 +16,16 @@
     "plugin"
   ],
   "author": "franleplant@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "error-reporter": "^0.1.4",
+    "event-stream": "^3.1.7",
+    "fs": "0.0.2",
+    "vinyl": "^0.4.3"
+  },
+  "dependencies": {
+    "gss-compiler": "^0.8.2",
+    "gulp-util": "^3.0.1",
+    "through2": "^0.6.3"
+  }
 }
