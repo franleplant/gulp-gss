@@ -1,0 +1,20 @@
+{
+  "name": "gulp-gss",
+  "version": "0.0.0",
+  "description": "Gulp wrapper to gss compiler",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "gulp",
+    "gss",
+    "grid",
+    "style",
+    "sheets",
+    "sheet",
+    "plugin"
+  ],
+  "author": "franleplant@gmail.com",
+  "license": "MIT"
+}
