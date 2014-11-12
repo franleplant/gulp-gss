@@ -9,9 +9,6 @@ var gss_compiler = require('gss-compiler');
 var PLUGIN_NAME = 'gulp-gss';
 
 
-// aux var to hold the gss compiler output
-var ast;
-
 
 function gulpGss() {
     
@@ -22,12 +19,21 @@ function gulpGss() {
         }
 
         if (file.isBuffer()){
-            ast = gss_compiler.compile(file.contents.toString());
+            try {
+                file.contents = new Buffer( JSON.stringify( gss_compiler.compile(file.contents.toString()) ) );
+            } catch (e) {
+                console.log('It has been an error.');
+                console.trace();
+                this.emit('error', new PluginError(PLUGIN_NAME, 'Compiling error. ' + e, {
+                    fileName: file.path,
+                    showStack: true
+                }));
+            }
         }
 
 
         // make sure the file goes through the next gulp plugin
-        this.push( JSON.stringify(ast) );
+        this.push( file );
 
 
         // tell the stream engine that we are done with this file
